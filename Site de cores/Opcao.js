@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
-  // Elementos HTML necessários
+  //Elementos HTML necessários
   const colorDisplay = document.getElementById("colorDisplay");
   const container = document.getElementById("container");
   const levelSelect = document.getElementById("levelSelect");
 
-  let maxErrors = 0; // Variável para controlar a quantidade máxima de erros permitidos
-  let currentErrors = 0; // Variável para controlar a quantidade de erros atuais
+  let maxErrors = 0; //Variável para controlar a quantidade máxima de erros permitidos
+  let currentErrors = 0; //Variável para controlar a quantidade de erros atuais
 
 
   function startGame() {
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const targetColorIndex = Math.floor(Math.random() * selectedLevel);
     const targetColor = colors[targetColorIndex];
 
-      // Definir a quantidade máxima de erros permitidos com base no nível de dificuldade
+  //Definir a quantidade máxima de erros permitidos com base no nível de dificuldade
   if (selectedLevel === 8) {
     maxErrors = 2;
   } else if (selectedLevel === 16) {
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
     maxErrors = 10;
   }
 
-  // Elemento HTML que exibe a cor a ser adivinhada
+  //Elemento HTML que exibe a cor a ser adivinhada
   colorDisplay.textContent = `Choose the color: ${targetColor}`;
   currentErrors = 0; // Zerar a contagem de erros
   container.innerHTML = ''; // Limpa os botões existentes
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 }
 
-  // Função para gerar cores aleatórias com base na quantidade selecionada
+  //Função para gerar cores aleatórias com base na quantidade selecionada
   function generateRandomColors(quantity) {
     const colorNames = ['Black', 'Navy', 'DarkBlue', 'MediumBlue', 'Blue', 'DarkGreen', 'Green', 'Teal', 'DarkCyan', 'DeepSkyBlue',
     'DarkTurquoise', 'MediumSpringGreen', 'Lime', 'SpringGreen', 'Aqua', 'Cyan', 'MidnightBlue', 'DodgerBlue', 'LightSeaGreen', 'ForestGreen',
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
     return colors;
   }
 
-  // Função para atualizar as cores após o acerto
+  //Função para atualizar as cores após o acerto
   function updateColors() {
     const buttons = document.querySelectorAll("button");
     const targetColor = colorDisplay.textContent.split(": ")[1];
@@ -93,9 +93,9 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  // Evento de mudança no seletor de nível de dificuldade
+  //Evento de mudança no seletor de nível de dificuldade
   levelSelect.addEventListener("change", startGame);
 
-  // Iniciar o jogo ao carregar a página
+  //Iniciar o jogo ao carregar a página
   startGame();
 });
